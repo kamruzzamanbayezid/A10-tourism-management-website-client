@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { useState } from "react";
 import CommonButton from "../../Components/CommonButton/CommonButton";
-// import CommonButton from "../../Components/CommonButton/CommonButton";
 // import SocialLogin from ../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
