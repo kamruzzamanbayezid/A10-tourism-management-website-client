@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
-// import { AuthContent } from "../../Provider/AuthProvider/AuthProvider";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Menubar = () => {
       const [menu, setMenu] = useState(false);
-      // const { user } = useContext(AuthContent);
+      const { user } = UseAuth();
       // console.log(user);
 
       const handleMenu = () => {
@@ -13,7 +13,7 @@ const Menubar = () => {
       }
 
       return (
-            <div className="bg-[#4C4C4C] w-full rounded mt-2">
+            <div className="bg-[#4C4C4C] w-full rounded mt-2 mb-8">
                   <div className="max-w-7xl mx-auto p-2">
                         <div className="flex justify-end items-center gap-2">
                               <div>
@@ -25,18 +25,18 @@ const Menubar = () => {
                               </div>
 
 
-                              {/* {
+                              {
                                     user && <div className="dropdown dropdown-end">
-                                          
+
                                           <div tabIndex={0} className="w-12 rounded-full">
                                                 <img src={user.photoURL} className="rounded-full" />
                                           </div>
                                           <ul tabIndex={0} className="dropdown-content z-[1] p-3 shadow bg-base-100 rounded-box w-fit">
-                                                <li><a className="text-[#E7AB3C] mb-2">{user.displayName}</a></li>
-                                                <li><a className="text-[#E7AB3C]">{user.email}</a></li>
+                                                <li><a className="text-blue mb-2">{user.displayName}</a></li>
+                                                <li><a className="text-blue">{user.email}</a></li>
                                           </ul>
                                     </div>
-                              } */}
+                              }
 
                         </div>
                         <ul className={`${menu ? 'flex flex-col' : 'hidden'} text-[#FFF] font-medium mt-3`}>

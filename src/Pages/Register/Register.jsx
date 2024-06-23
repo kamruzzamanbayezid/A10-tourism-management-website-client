@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { useState } from "react";
 import CommonButton from "../../Components/CommonButton/CommonButton";
+import UseAuth from "../../Hooks/UseAuth";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 // import SocialLogin from ../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
 
       const [showPassword, setShowPassword] = useState(false);
+      const { createUser, userUpdate } = UseAuth();
+      const navigate = useNavigate();
 
       // using react hook form
       const { register, handleSubmit, formState: { errors } } = useForm()
@@ -25,6 +29,25 @@ const Register = () => {
             if (!/[a-z]/.test(password)) {
                   return toast.error('Password should have at least one lowercase letter!!')
             }
+
+            // crate user
+            createUser(email, password)
+                  .then(() => {
+
+                        // update profile
+                        userUpdate(name, url)
+                              .then(() => {
+                                    toast.success('User Create successfully!!');
+                                    navigate('/')
+                                    console.log('user agaya');
+                              })
+                              .catch(error => {
+                                    toast.error(error.message)
+                              })
+                  })
+                  .catch(error => {
+                        toast.error(error.message)
+                  })
 
       }
 
@@ -75,7 +98,15 @@ const Register = () => {
                               </form>
                         </div>
 
-                       
+                        <div className="px-4 lg:px-0">
+                              <div className="flex items-center w-full my-4">
+                                    <hr className="w-full dark:text-gray-600" />
+                                    <p className="px-3 dark:text-gray-600 text-[#000000] font-medium">OR</p>
+                                    <hr className="w-full dark:text-gray-600" />
+                              </div>
+
+                              <SocialLogin />
+                        </div>
 
                   </div>
             </div>
