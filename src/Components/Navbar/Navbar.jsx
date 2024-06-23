@@ -20,7 +20,7 @@ const Navbar = () => {
       // }
 
       return (
-            <div className="my-5">
+            <div className="lg:my-4">
                   <div>
                         <div className="flex justify-between items-center max-w-7xl mx-auto">
                               <div className="flex items-center">
