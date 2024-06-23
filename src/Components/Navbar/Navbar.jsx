@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import UseAuth from "../../Hooks/UseAuth";
 import toast from "react-hot-toast";
@@ -24,7 +24,9 @@ const Navbar = () => {
                               <div className="flex items-center">
 
                                     <div className="flex">
-                                          <h2 className="text-blue font-medium text-3xl font-josefin">ExploreAsia</h2>
+                                          <Link to='/'>
+                                                <h2 className="text-blue font-medium text-3xl font-josefin">ExploreAsia</h2>
+                                          </Link>
                                     </div>
                               </div>
 
@@ -88,10 +90,10 @@ const Navbar = () => {
                                     {
                                           user && <div className="dropdown dropdown-end">
 
-                                                <div tabIndex={0} className="w-12 rounded-full">
-                                                      <img src={user.photoURL} className="rounded-full" />
+                                                <div tabIndex={0} className="">
+                                                      <img src={user.photoURL} className="rounded-full w-12 h-12" />
                                                 </div>
-                                                <ul tabIndex={0} className="dropdown-content z-[1] p-3 shadow bg-base-100 rounded-box w-fit">
+                                                <ul tabIndex={0} className="dropdown-content z-[1] p-3 shadow bg-base-100 rounded-box w-fit ">
                                                       <li><a className="text-blue mb-2">{user.displayName}</a></li>
                                                       <li><a className="text-blue">{user.email}</a></li>
                                                 </ul>
