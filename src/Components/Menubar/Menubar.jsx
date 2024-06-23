@@ -2,11 +2,22 @@ import { useState } from "react";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
+import toast from "react-hot-toast";
 
 const Menubar = () => {
       const [menu, setMenu] = useState(false);
-      const { user } = UseAuth();
-      // console.log(user);
+      const { user, logOut } = UseAuth();
+
+      const handleLOgOut = () => {
+            logOut()
+                  .then(() => {
+                        toast.success('SUccessfully Logged Out')
+                  })
+                  .catch(error => {
+                        toast.error(error.message)
+                  })
+      }
+
 
       const handleMenu = () => {
             setMenu(!menu)
@@ -41,10 +52,19 @@ const Menubar = () => {
                         </div>
                         <ul className={`${menu ? 'flex flex-col' : 'hidden'} text-[#FFF] font-medium mt-3`}>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/' ><li className="py-3 px-8 text-sm h-full ">HOME</li></NavLink>
-                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/addProducts' ><li className="py-3 px-8 text-sm h-full">Add Products</li></NavLink>
-                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/myCart' ><li className="py-3 px-8 text-sm h-full">My Cart</li></NavLink>
-                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/register' ><li className="py-3 px-8 text-sm h-full">Register</li></NavLink>
-                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/login' ><li className="py-3 px-8 text-sm h-full">Login</li></NavLink>
+                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/addProducts' ><li className="py-3 px-8 text-sm h-full">All Tourists Spot</li></NavLink>
+                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/myCart' ><li className="py-3 px-8 text-sm h-full">Add Tourists Spot</li></NavLink>
+                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/register' ><li className="py-3 px-8 text-sm h-full">My List</li></NavLink>
+                              {
+                                    user ?
+                                          <button onClick={handleLOgOut} className="px-5 py-2.5 relative rounded group overflow-hidden font-medium ml-8 w-40 inline-block bg-[#00095E] text-white">
+                                                <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 common-bg group-hover:h-full opacity-90"></span>
+                                                <span className="relative group-hover:text-white">Log Out</span>
+                                          </button>
+                                          :
+                                          <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/login' ><li className="py-3 px-8 text-sm h-full">Login</li></NavLink>
+                              }
+
                         </ul>
                   </div>
             </div>
