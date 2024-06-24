@@ -52,7 +52,7 @@ const Menubar = () => {
                         </div>
                         <ul className={`${menu ? 'flex flex-col' : 'hidden'} text-[#FFF] font-medium mt-3`}>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/' ><li className="py-3 px-8 text-sm h-full ">HOME</li></NavLink>
-                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/addouristSpot' ><li className="py-3 px-8 text-sm h-full">All Tourists Spot</li></NavLink>
+                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/allTouristSpots' ><li className="py-3 px-8 text-sm h-full">All Tourists Spot</li></NavLink>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/addTouristSpot' ><li className="py-3 px-8 text-sm h-full">Add Tourists Spot</li></NavLink>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/register' ><li className="py-3 px-8 text-sm h-full">My List</li></NavLink>
                               {

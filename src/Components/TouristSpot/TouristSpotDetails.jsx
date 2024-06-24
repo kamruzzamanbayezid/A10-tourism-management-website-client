@@ -15,7 +15,7 @@ const TouristSpotDetails = () => {
 
       return (
             <div className="lg:mb-20">
-                  <div className="lg:my-10 mb-10">
+                  <div className="lg:my-10 mb-5">
 
                         <div className='relative'>
                               <div className='absolute inset-0' style={{
@@ -86,7 +86,7 @@ const TouristSpotDetails = () => {
                                     <div>
                                           <h1 className="text-blue text-4xl font-bold font-josefin">{spotName}</h1>
                                           <span className='text-base font-semibold text-[#666] flex items-center gap-2 mb-2'><IoLocationSharp className='text-2xl text-yellow' /> {location}</span>
-                                          <hr className="my-5" />
+                                          
                                     </div>
                                     <div className='flex items-center gap-3 px-3 py-1 md:px-7 md:py-3 common-bg'>
                                           <IoIosPricetags className='text-2xl md:text-4xl text-white' />
@@ -96,8 +96,10 @@ const TouristSpotDetails = () => {
                                           </div>
                                     </div>
                               </div>
-
+                              
+                              <hr className="my-5" />
                               <p className="text-[#666] text-sm">{description}</p>
+                              <hr className="my-5" />
 
                               {/* table */}
                               <div className="my-8">
@@ -140,10 +142,12 @@ const TouristSpotDetails = () => {
 
                         {/* right part */}
                         <div className=" lg:w-[39%]">
+
                               <div className="bg-[#00095E] flex items-center justify-between py-3 px-6">
                                     <h1 className=" text-white font-josefin text-3xl">Book This Tour</h1>
                                     <p className='text-yellow font-medium md:text-2xl'>${averageCost}</p>
                               </div>
+
                               <div className="">
                                     <div className="">
 
@@ -191,6 +195,8 @@ const TouristSpotDetails = () => {
                                           </div>
                                     </div>
                               </div>
+
+                              <img className="w-full mt-10" src="https://i.ibb.co/VCtXC12/9906308-4304705.jpg" alt="" />
                         </div>
                   </div>
 

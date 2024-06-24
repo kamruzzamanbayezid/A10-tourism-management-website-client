@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const TouristSpot = ({ touristSpot }) => {
 
-      const { _id, image, spotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, description, email, name } = touristSpot || {};
+      const { _id, image, spotName, countryName, location, averageCost, seasonality, travelTime } = touristSpot || {};
 
       return (
             <div className="bg-white card-style p-5 hover-card mb-10 flex flex-col">
