@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import UseAuth from "../../Hooks/UseAuth";
 
 const AddTouristSpot = () => {
+
+      const { user } = UseAuth();
 
       const [spotName, setSpotName] = useState('');
       const [countryName, setCountryName] = useState('');
@@ -27,6 +30,10 @@ const AddTouristSpot = () => {
 
       const handleAddProducts = e => {
             e.preventDefault();
+
+            const userName = user?.displayName;
+            const userEmail = user?.email;
+
             const formData = {
                   image,
                   spotName,
@@ -37,9 +44,30 @@ const AddTouristSpot = () => {
                   travelTime,
                   totalVisitorsPerYear,
                   description,
+                  userName,
+                  userEmail
             };
 
-            console.log(formData);
+            fetch('http://localhost:5000/touristSpots', {
+                  method: 'POST',
+                  headers: {
+                        "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(formData)
+            })
+                  .then(res => res.json())
+                  .then(data => {
+                        if (data.insertedId) {
+                              Swal.fire(
+                                    'Good job!',
+                                    'Tourist Spot Added Successfully!',
+                                    'success'
+                              )
+                              resetForm();
+
+                        }
+                  })
+
             // fetch('https://fashion-hub-server.vercel.app/products', {
             //       method: 'POST',
             //       headers: {
@@ -118,7 +146,7 @@ const AddTouristSpot = () => {
                               <div>
                                     <label htmlFor="travel_time" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Travel Time</label>
                                     <input value={travelTime}
-                                          onChange={(e) => setTravelTime(e.target.value)} type="number" id="travel_time" name="travel_time" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=">Travel Time" required />
+                                          onChange={(e) => setTravelTime(e.target.value)} type="text" id="travel_time" name="travel_time" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=">Travel Time" required />
                               </div>
                               <div>
                                     <label htmlFor="totalVisitorsPerYear" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total Visitors Per Year</label>

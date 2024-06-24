@@ -1,0 +1,80 @@
+[
+      {
+            "image": "https://i.ibb.co/LRM78X5/915.jpg",
+            "tourists_spot_name": "Sundarban",
+            "country_Name": "Bangladesh",
+            "location": "Khulna Division",
+            "short_description": "The Sundarbans is the largest mangrove forest in the world, known for its unique biodiversity and as the home of the Royal Bengal Tiger. Visitors can explore the dense forest, spot diverse wildlife, and experience the serene beauty of the waterways.",
+            "average_cost": 300,
+            "seasonality": "Winter",
+            "travel_time": "5 days & 4 nights",
+            "totalVisitorsPerYear": 150000,
+            "userEmail": "user1@example.com",
+            "userName": "John Doe"
+      },
+      {
+            "image": "https://i.ibb.co/m601D0M/2151604338.jpg",
+            "tourists_spot_name": "Cox’s Bazar",
+            "country_Name": "Bangladesh",
+            "location": "Chittagong Division",
+            "short_description": "Cox’s Bazar boasts the longest uninterrupted natural sandy beach in the world, attracting millions of visitors every year. It's a perfect destination for sunbathing, swimming, and enjoying the vibrant beachside activities.",
+            "average_cost": 200,
+            "seasonality": "Winter",
+            "travel_time": "7 days & 6 nights",
+            "totalVisitorsPerYear": 2000000,
+            "userEmail": "user2@example.com",
+            "userName": "Jane Smith"
+      },
+      {
+            "image": "https://i.ibb.co/xzbHSb6/41414.jpg",
+            "tourists_spot_name": "Rangamati",
+            "country_Name": "Bangladesh",
+            "location": "Chittagong Hill Tracts",
+            "short_description": "Rangamati is known for its scenic beauty, including hills, lakes, and the famous Hanging Bridge. Tourists can enjoy boat rides on Kaptai Lake, visit indigenous villages, and hike through lush green landscapes.",
+            "average_cost": 250,
+            "seasonality": "Summer",
+            "travel_time": "4 days & 3 nights",
+            "totalVisitorsPerYear": 500000,
+            "userEmail": "user3@example.com",
+            "userName": "Alice Johnson"
+      },
+      {
+            "image": "https://i.ibb.co/gSt6S9w/27189.jpg",
+            "tourists_spot_name": "Bandarban",
+            "country_Name": "Bangladesh",
+            "location": "Chittagong Hill Tracts",
+            "short_description": "Bandarban is a hilly district known for its natural beauty, including waterfalls, peaks, and indigenous culture. Adventure seekers can trek to Nilgiri and Boga Lake, and experience the tranquility of the hilltop resorts.",
+            "average_cost": 270,
+            "seasonality": "Autumn",
+            "travel_time": "5 days and 4 nights",
+            "totalVisitorsPerYear": 600000,
+            "userEmail": "user4@example.com",
+            "userName": "Michael Brown"
+      },
+      {
+            "image": "https://i.ibb.co/bXr1gJS/6805.jpg",
+            "tourists_spot_name": "Saint Martin’s Island",
+            "country_Name": "Bangladesh",
+            "location": "Bay of Bengal",
+            "short_description": "Saint Martin’s Island is a small island in the northeast of the Bay of Bengal, known for its coral reef and clear blue waters. It's an ideal spot for snorkeling, diving, and enjoying the serene beach environment.",
+            "average_cost": 320,
+            "seasonality": "Winter",
+            "travel_time": "3 days & 2 nights",
+            "totalVisitorsPerYear": 300000,
+            "userEmail": "user5@example.com",
+            "userName": "Emma Davis"
+      },
+      {
+            "image": "https://i.ibb.co/8PyTwxJ/811.jpg",
+            "tourists_spot_name": "Bangkok",
+            "country_Name": "Thailand",
+            "location": "Central Thailand",
+            "short_description": "Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life. The opulent Grand Palace and its sacred Wat Phra Kaew Temple are among the city’s top attractions. Visitors can also explore bustling markets, enjoy Thai cuisine, and experience the lively nightlife.",
+            "average_cost": 400,
+            "seasonality": "Rainy Season",
+            "travel_time": "5 days & 4 nights",
+            "totalVisitorsPerYear": 22000000,
+            "userEmail": "user6@example.com",
+            "userName": "William Wilson"
+      }
+]
