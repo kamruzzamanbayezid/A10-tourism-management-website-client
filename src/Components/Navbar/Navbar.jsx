@@ -46,7 +46,7 @@ const Navbar = () => {
                                           </NavLink>
                                     </li>
                                     <li className="hover:border-b hover:border-[#FFC800] text-base font-josefin transition delay-200">
-                                          <NavLink to="/add"
+                                          <NavLink to="/addTouristSpot"
                                                 className={({ isActive }) => isActive ? 'text-yellow' : 'text-blue'}
                                           >
                                                 Add Tourists Spot
