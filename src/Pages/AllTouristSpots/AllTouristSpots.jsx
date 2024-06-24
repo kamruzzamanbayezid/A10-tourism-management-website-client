@@ -5,12 +5,10 @@ import SingleTouristSpot from "./SingleTouristSpot";
 const AllTouristSpots = () => {
 
       const loadedAllTouristSpots = useLoaderData();
-      console.log(loadedAllTouristSpots);
 
       return (
             <div>
                   <div className="lg:my-10 mb-10">
-
                         <div className='relative'>
                               <div className='absolute inset-0' style={{
                                     backgroundImage: `url('https://i.ibb.co/Zxr0MQZ/2149153256.jpg')`,

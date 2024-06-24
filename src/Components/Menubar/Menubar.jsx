@@ -54,7 +54,7 @@ const Menubar = () => {
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/' ><li className="py-3 px-8 text-sm h-full ">HOME</li></NavLink>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/allTouristSpots' ><li className="py-3 px-8 text-sm h-full">All Tourists Spot</li></NavLink>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/addTouristSpot' ><li className="py-3 px-8 text-sm h-full">Add Tourists Spot</li></NavLink>
-                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/register' ><li className="py-3 px-8 text-sm h-full">My List</li></NavLink>
+                              <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/myList' ><li className="py-3 px-8 text-sm h-full">My List</li></NavLink>
                               {
                                     user ?
                                           <button onClick={handleLOgOut} className="px-5 py-2.5 relative rounded group overflow-hidden font-medium ml-8 w-40 inline-block bg-[#00095E] text-white">
