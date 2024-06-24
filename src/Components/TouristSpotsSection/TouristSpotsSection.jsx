@@ -6,12 +6,10 @@ const TouristSpotsSection = () => {
       const [touristSpots, setTouristSpots] = useState([]);
 
       useEffect(() => {
-            fetch('/touristSpots.json')
+            fetch('http://localhost:5000/touristSpots')
                   .then(res => res.json())
                   .then(data => setTouristSpots(data))
       }, [])
-
-
 
       return (
             <div className="my-10 lg:my-20 py-10 lg:py-20 bg-[#f3f4f9]">
@@ -21,7 +19,7 @@ const TouristSpotsSection = () => {
 
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                               {
-                                    touristSpots?.map((touristSpot,idx) => <TouristSpot key={idx} touristSpot={touristSpot}></TouristSpot>)
+                                    touristSpots?.map((touristSpot, idx) => <TouristSpot key={idx} touristSpot={touristSpot}></TouristSpot>)
                               }
                         </div>
                   </div>
