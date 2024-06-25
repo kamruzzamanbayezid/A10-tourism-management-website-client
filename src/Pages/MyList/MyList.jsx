@@ -3,17 +3,54 @@ import UseAuth from "../../Hooks/UseAuth";
 import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import MyListTableRow from "./MyListTableRow/MyListTableRow";
+import Swal from "sweetalert2";
 
 const MyList = () => {
 
       const { user } = UseAuth();
+      const email = user?.email;
+      
       const [touristSpots, setTouristSpots] = useState([]);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/touristSpots/${user?.email}`)
+            fetch(`http://localhost:5000/touristSpots/${email}`)
                   .then(res => res.json())
                   .then(data => setTouristSpots(data))
-      }, [user?.email])
+      }, [email]);
+
+      const handleDelete = (id) => {
+
+            Swal.fire({
+                  title: "Are you sure?",
+                  text: "You won't be able to revert this!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                  if (result.isConfirmed) {
+                        fetch(`http://localhost:5000/touristSpots/${id}`, {
+                              method: 'DELETE'
+                        })
+                              .then(res => res.json())
+                              .then(data => {
+                                    console.log(data);
+                                    if (data.deletedCount === 1) {
+                                          console.log("Successfully deleted one document.");
+                                          Swal.fire({
+                                                title: "Deleted!",
+                                                text: "Your file has been deleted.",
+                                                icon: "success"
+                                          });
+
+                                          const remaining = touristSpots?.filter(touristSpot => touristSpot?._id !== id);
+                                          setTouristSpots(remaining);
+                                    }
+                              });
+                  }
+            });
+      }
 
       return (
             <div className="mb-20">
@@ -66,10 +103,11 @@ const MyList = () => {
                                                 touristSpots?.map(touristSpot => <MyListTableRow
                                                       key={touristSpot?._id}
                                                       touristSpot={touristSpot}
+                                                      handleDelete={handleDelete}
                                                 ></MyListTableRow>)
                                           }
                                     </tbody>
-                                   
+
 
                               </table>
                         </div>

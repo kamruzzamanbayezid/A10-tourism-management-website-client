@@ -1,38 +1,25 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
-import UseAuth from "../../Hooks/UseAuth";
+import toast from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 
-const AddTouristSpot = () => {
+const UpdateTouristSpot = () => {
 
-      const { user } = UseAuth();
+      const loadedTouristSpot = useLoaderData();
 
-      const [spotName, setSpotName] = useState('');
-      const [countryName, setCountryName] = useState('');
-      const [image, setImage] = useState('');
-      const [location, setLocation] = useState('');
-      const [averageCost, setAverageCost] = useState('');
-      const [seasonality, setSeasonality] = useState('');
-      const [travelTime, setTravelTime] = useState(0);
-      const [totalVisitorsPerYear, setTotalVisitorsPerYear] = useState(0);
-      const [description, setDescription] = useState('')
+      // const { image, spotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, description } = loadedTouristSpot || {};
 
-      const resetForm = () => {
-            setSpotName('');
-            setCountryName('');
-            setImage('');
-            setLocation('');
-            setAverageCost('');
-            setSeasonality('');
-            setTravelTime(0);
-            setTotalVisitorsPerYear(0);
-            setDescription('');
-      };
+      const [spotName, setSpotName] = useState(loadedTouristSpot?.spotName);
+      const [countryName, setCountryName] = useState(loadedTouristSpot?.countryName);
+      const [image, setImage] = useState(loadedTouristSpot?.image);
+      const [location, setLocation] = useState(loadedTouristSpot?.location);
+      const [averageCost, setAverageCost] = useState(loadedTouristSpot?.averageCost);
+      const [seasonality, setSeasonality] = useState(loadedTouristSpot?.seasonality);
+      const [travelTime, setTravelTime] = useState(loadedTouristSpot?.travelTime);
+      const [totalVisitorsPerYear, setTotalVisitorsPerYear] = useState(loadedTouristSpot?.totalVisitorsPerYear);
+      const [description, setDescription] = useState(loadedTouristSpot?.description)
 
-      const handleAddTouristSpot = e => {
+      const handleUpdateTouristSpot = (e) => {
             e.preventDefault();
-
-            const name = user?.displayName;
-            const email = user?.email;
 
             const formData = {
                   image,
@@ -44,41 +31,31 @@ const AddTouristSpot = () => {
                   travelTime,
                   totalVisitorsPerYear,
                   description,
-                  name,
-                  email
             };
 
-            fetch('http://localhost:5000/touristSpots', {
-                  method: 'POST',
-                  headers: {
-                        "Content-Type": "application/json",
-                  },
+            fetch(`http://localhost:5000/touristSpotDetails/${loadedTouristSpot?._id}`, {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(formData)
             })
                   .then(res => res.json())
                   .then(data => {
-                        if (data.insertedId) {
-                              Swal.fire(
-                                    'Good job!',
-                                    'Tourist Spot Added Successfully!',
-                                    'success'
-                              )
-                              resetForm();
-
+                        
+                        if (data.modifiedCount === 1) {
+                              toast.success('Tourist Spot update Successfully!')
                         }
                   })
-
       }
 
       return (
             <div className="max-w-7xl mx-auto my-8 md:my-14">
                   <div className="max-w-7xl mx-auto flex items-center flex-col gap-4 justify-center text-center">
-                        <h1 className="text-blue font-bold text-5xl font-josefin  relative z-20">Add Tourist Spot!</h1>
-                        <span className="-mt-8 md:-mt-8 mb-4 h-3 w-[400px] common-bg relative z-0"></span>
+                        <h1 className="text-blue font-bold text-5xl font-josefin  relative z-20">Update Tourist Spot!</h1>
+                        <span className="-mt-8 md:-mt-8 mb-4 h-3 w-[470px] common-bg relative z-0"></span>
 
                   </div>
 
-                  <form onSubmit={handleAddTouristSpot} className="lg:w-4/5 p-4 mx-auto">
+                  <form onSubmit={handleUpdateTouristSpot} className="lg:w-4/5 p-4 mx-auto">
                         <div className="grid gap-6 mb-6 md:grid-cols-2">
                               <div>
                                     <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tourists Spot Name</label>
@@ -141,7 +118,7 @@ const AddTouristSpot = () => {
                                     onChange={(e) => setDescription(e.target.value)} rows="3" type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Short Description" required />
                         </div>
 
-                        <button type="submit" className="text-white common-bg  focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Tourist spot</button>
+                        <button type="submit" className="text-white common-bg  focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
 
                   </form>
 
@@ -149,4 +126,4 @@ const AddTouristSpot = () => {
       );
 };
 
-export default AddTouristSpot;
+export default UpdateTouristSpot;
