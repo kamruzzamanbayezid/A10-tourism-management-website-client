@@ -2,9 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import UseAuth from "../../Hooks/UseAuth";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
 
+      const [theme, setTheme] = useState('light');
       const { user, logOut } = UseAuth();
 
       const handleLOgOut = () => {
@@ -17,6 +19,24 @@ const Navbar = () => {
                   })
       }
 
+      useEffect(() => {
+            localStorage.setItem('theme', theme);
+            const localTheme = localStorage.getItem('theme');
+
+            document.querySelector('html').setAttribute('data-theme', localTheme)
+      }, [theme])
+
+      // toggle event handler
+      const handleToggleTheme = (e) => {
+            console.log(e.target.checked);
+            if (e.target.checked) {
+                  setTheme('dark')
+            }
+            else {
+                  setTheme('light')
+            }
+      }
+
       return (
             <div className="lg:my-4">
                   <div>
@@ -25,7 +45,7 @@ const Navbar = () => {
 
                                     <div className="flex">
                                           <Link to='/'>
-                                                <h2 className="text-blue font-medium text-3xl font-josefin">ExploreAsia</h2>
+                                                <h2 className="text-blue font-medium text-3xl font-josefin dark:text-white">ExploreAsia</h2>
                                           </Link>
                                     </div>
                               </div>
@@ -99,6 +119,9 @@ const Navbar = () => {
                                                 </ul>
                                           </div>
                                     }
+
+                                    {/* Toggler */}
+                                    <input onChange={handleToggleTheme} type="checkbox" className="toggle toggle-warning" />
 
                                     <li className="common-bg flex items-center gap-2 rounded px-6 py-3 text-base font-josefin">
                                           <FaPhoneAlt />
