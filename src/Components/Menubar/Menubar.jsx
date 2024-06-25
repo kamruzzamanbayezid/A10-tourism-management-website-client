@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 const Menubar = () => {
       const [menu, setMenu] = useState(false);
+      const [theme, setTheme] = useState('light');
       const { user, logOut } = UseAuth();
 
       const handleLOgOut = () => {
@@ -18,6 +19,25 @@ const Menubar = () => {
                   })
       }
 
+      useEffect(() => {
+            localStorage.setItem('theme', theme);
+            const localTheme = localStorage.getItem('theme');
+
+            document.querySelector('html').setAttribute('data-theme', localTheme)
+      }, [theme])
+
+      // toggle event handler
+      const handleToggleTheme = (e) => {
+            console.log(e.target.checked);
+            if (e.target.checked) {
+                  setTheme('dark')
+            }
+            else {
+                  setTheme('light')
+            }
+      }
+
+
 
       const handleMenu = () => {
             setMenu(!menu)
@@ -27,12 +47,15 @@ const Menubar = () => {
             <div className="bg-[#4C4C4C] w-full rounded mt-2 mb-8">
                   <div className="max-w-7xl mx-auto p-2">
                         <div className="flex justify-end items-center gap-2">
-                              <div>
+                              <div className="flex items-center gap-2">
+                                    {/* Toggler */}
+                                    <input onChange={handleToggleTheme} type="checkbox" className="toggle toggle-warning" />
                                     <h3 onClick={handleMenu} className="cursor-pointer flex justify-end items-center text-[#FFFFFF] bg-black w-fit px-4 py-1 rounded-lg gap-2 text-xl text-end"><span>
                                           {menu ? <HiOutlineX></HiOutlineX>
                                                 :
                                                 <HiMenu></HiMenu>}
                                     </span>Menu</h3>
+
                               </div>
 
 
