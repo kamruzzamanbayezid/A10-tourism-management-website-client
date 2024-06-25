@@ -1,10 +1,18 @@
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import SingleTouristSpot from "./SingleTouristSpot";
+import { useState } from "react";
 
 const AllTouristSpots = () => {
 
       const loadedAllTouristSpots = useLoaderData();
+      const [allTouristSpots, setAllTouristSpots] = useState(loadedAllTouristSpots);
+
+      const handleSort = () => {
+            fetch('http://localhost:5000/touristSpots/descending')
+                  .then(res => res.json())
+                  .then(data => setAllTouristSpots(data))
+      }
 
       return (
             <div>
@@ -40,10 +48,20 @@ const AllTouristSpots = () => {
                               :
                               <div className="max-w-[1170px] mx-auto">
 
+                                    {/* dropdown */}
+                                    <div className="lg:max-w-5xl mx-auto mb-8 flex justify-center">
+                                          <div className="dropdown dropdown-end">
+                                                <div tabIndex={0} role="button" className=" py-3 px-6 rounded-md m-1 bg-[#00095E] text-white">Sort By</div>
+                                                <ul tabIndex={0} className="dropdown-content menu bg-yellow text-blue rounded-box z-[1] w-52 p-2 shadow">
+                                                      <li onClick={handleSort}><a>Average Cost</a></li>
+                                                </ul>
+                                          </div>
+                                    </div>
+
                                     <div className=''>
 
                                           {
-                                                loadedAllTouristSpots?.map((touristSpot, idx) => <SingleTouristSpot key={idx} touristSpot={touristSpot}></SingleTouristSpot>)
+                                                allTouristSpots?.map((touristSpot, idx) => <SingleTouristSpot key={idx} touristSpot={touristSpot}></SingleTouristSpot>)
                                           }
                                     </div>
                               </div>

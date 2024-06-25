@@ -9,7 +9,7 @@ const Country = ({ country }) => {
       return (
 
             <Link to={`/specificCountry/${country_name}`}>
-                  <div className="country-card bg-base-100 shadow-xl ">
+                  <div className="country-card bg-base-100 shadow-xl">
                         <figure className="">
                               <img
                                     src={image}
