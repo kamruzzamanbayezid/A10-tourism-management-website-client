@@ -1,16 +1,20 @@
 import toast from "react-hot-toast";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import UseAuth from "../../Hooks/UseAuth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const SocialLogin = () => {
 
       const { googleLogin, githubLogin } = UseAuth();
+      const location = useLocation();
+      const navigate = useNavigate();
 
       const socialLogin = (media) => {
             media()
                   .then(() => {
                         toast.success('Successfully Logged in!!')
+                        navigate(location?.state ? location?.state : '/login');
                         
 
                   })

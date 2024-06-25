@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
@@ -13,8 +13,10 @@ const Login = () => {
       const [showPassword, setShowPassword] = useState(false);
 
       const { logIn } = UseAuth();
-
-
+      const location = useLocation();
+      const navigate = useNavigate();
+     
+      
       // using react hook form
       const { register, handleSubmit, formState: { errors } } = useForm()
       const onSubmit = (data) => {
@@ -34,8 +36,9 @@ const Login = () => {
             // Log In
             logIn(email, password)
                   .then(() => {
-                        toast.success('Successfully Logged in!!')
-                        
+                        toast.success('Successfully Logged in!!');
+                        navigate(location?.state ? location?.state : '/login')
+
                   })
                   .catch(error => {
                         toast.error(error.message)
