@@ -1,10 +1,10 @@
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
-import SingleTouristSpot from "./SingleTouristSpot";
+import SpecificCountry from "./SpecificCountry";
 
-const AllTouristSpots = () => {
+const SpecificCountries = () => {
 
-      const loadedAllTouristSpots = useLoaderData();
+      const loadedSpecificCountry = useLoaderData();
 
       return (
             <div>
@@ -22,7 +22,7 @@ const AllTouristSpots = () => {
                               <div className='location relative z-10 home-slider-place flex flex-col justify-center items-center h-[70vh] md:h-[60vh]  mx-auto'>
                                     <h1 className='text-white text-center font-medium lg:text-6xl mb-4 animate__animated animate__zoomIn font-josefin'>Live Your Life Through Travel</h1>
                                     <span className='text-lg text-white flex items-center gap-2 mb-4'>
-                                          <Link to='/'>Home</Link> <MdKeyboardDoubleArrowRight className="text-yellow text-2xl" /> All Tourist Spots
+                                          <Link to='/'>Home</Link> <MdKeyboardDoubleArrowRight className="text-yellow text-2xl" /> Explore Beauty Of World
 
                                     </span>
 
@@ -30,28 +30,27 @@ const AllTouristSpots = () => {
                         </div>
                   </div>
 
-
                   {
-                        loadedAllTouristSpots?.length === 0 ?
+                        loadedSpecificCountry?.length === 0 ?
                               <div className="max-w-7xl flex items-center justify-center mx-auto h-[80vh]">
                                     <img className="h-full" src="https://i.ibb.co/3FVgSYq/3009287.jpg" alt="" />
                               </div>
-
                               :
                               <div className="max-w-[1170px] mx-auto">
 
                                     <div className=''>
-
                                           {
-                                                loadedAllTouristSpots?.map((touristSpot, idx) => <SingleTouristSpot key={idx} touristSpot={touristSpot}></SingleTouristSpot>)
+                                                loadedSpecificCountry?.map((specificCountry, idx) => <SpecificCountry
+                                                      key={idx}
+                                                      specificCountry={specificCountry}
+                                                ></SpecificCountry>)
                                           }
                                     </div>
                               </div>
                   }
 
-
             </div>
       );
 };
 
-export default AllTouristSpots;
+export default SpecificCountries;

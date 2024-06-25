@@ -9,7 +9,7 @@ const MyList = () => {
 
       const { user } = UseAuth();
       const email = user?.email;
-      
+
       const [touristSpots, setTouristSpots] = useState([]);
 
       useEffect(() => {
@@ -77,41 +77,49 @@ const MyList = () => {
                         </div>
                   </div>
 
-                  <div className="max-w-7xl p-2 mx-auto sm:p-4 dark:text-gray-800">
+                  {
+                        touristSpots?.length === 0 ?
+                              <div className="max-w-7xl flex items-center justify-center mx-auto h-[80vh]">
+                                    <img className="h-full" src="https://i.ibb.co/3FVgSYq/3009287.jpg" alt="" />
+                              </div>
+                              :
+                              <div className="max-w-7xl p-2 mx-auto sm:p-4 dark:text-gray-800">
 
-                        <div className="overflow-x-auto">
-                              <table className="min-w-full text-lg">
-                                    <colgroup>
-                                          <col />
-                                          <col />
-                                          <col />
-                                          <col />
+                                    <div className="overflow-x-auto">
+                                          <table className="min-w-full text-lg">
+                                                <colgroup>
+                                                      <col />
+                                                      <col />
+                                                      <col />
+                                                      <col />
 
-                                          <col className="w-24" />
-                                    </colgroup>
-                                    <thead className="dark:bg-gray-300">
-                                          <tr className="text-left">
-                                                <th className="text-blue text-xl p-3">Spot Name</th>
-                                                <th className="text-blue text-xl p-3">Travel Time</th>
-                                                <th className="text-blue text-xl p-3">Average Cost</th>
-                                                <th className="text-blue text-xl p-3">Season</th>
-                                                <th className="text-blue text-xl p-3">Status</th>
-                                          </tr>
-                                    </thead>
-                                    <tbody>
-                                          {
-                                                touristSpots?.map(touristSpot => <MyListTableRow
-                                                      key={touristSpot?._id}
-                                                      touristSpot={touristSpot}
-                                                      handleDelete={handleDelete}
-                                                ></MyListTableRow>)
-                                          }
-                                    </tbody>
+                                                      <col className="w-24" />
+                                                </colgroup>
+                                                <thead className="dark:bg-gray-300">
+                                                      <tr className="text-left">
+                                                            <th className="text-blue text-xl p-3">Spot Name</th>
+                                                            <th className="text-blue text-xl p-3">Travel Time</th>
+                                                            <th className="text-blue text-xl p-3">Average Cost</th>
+                                                            <th className="text-blue text-xl p-3">Season</th>
+                                                            <th className="text-blue text-xl p-3">Status</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      {
+                                                            touristSpots?.map(touristSpot => <MyListTableRow
+                                                                  key={touristSpot?._id}
+                                                                  touristSpot={touristSpot}
+                                                                  handleDelete={handleDelete}
+                                                            ></MyListTableRow>)
+                                                      }
+                                                </tbody>
 
 
-                              </table>
-                        </div>
-                  </div>
+                                          </table>
+                                    </div>
+                              </div>
+                  }
+
             </div>
       );
 };
