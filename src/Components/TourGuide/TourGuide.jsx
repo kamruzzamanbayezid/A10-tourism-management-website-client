@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import Guide from "./Guide";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 // Import Swiper styles
@@ -8,6 +7,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
 import './Guide.css';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from "swiper/modules";
 

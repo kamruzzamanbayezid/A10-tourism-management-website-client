@@ -12,7 +12,7 @@ const Home = () => {
                   <Helmet>
                         <title>Home | ExploreAsia</title>
                   </Helmet>
-                  
+
                   <Banner />
                   <Slider />
                   <TouristSpotsSection />
