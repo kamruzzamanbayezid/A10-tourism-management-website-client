@@ -18,7 +18,7 @@ const TourGuide = () => {
       const [tourGuide, setTourGuide] = useState([]);
 
       useEffect(() => {
-            fetch('/tourGuide.json')
+            fetch('http://localhost:5000/tourGuides')
                   .then(res => res.json())
                   .then(data => setTourGuide(data))
       }, [])
