@@ -5,6 +5,7 @@ import { IoFootsteps, IoLocationSharp } from "react-icons/io5";
 import { IoIosPeople, IoIosPricetags } from "react-icons/io";
 import { FaPersonHiking } from "react-icons/fa6";
 import CommonButton from "../CommonButton/CommonButton";
+import { Helmet } from "react-helmet-async";
 
 
 const TouristSpotDetails = () => {
@@ -15,6 +16,9 @@ const TouristSpotDetails = () => {
 
       return (
             <div className="lg:mb-20">
+                  <Helmet>
+                        <title>Spot Details | ExploreAsia</title>
+                  </Helmet>
                   <div className="lg:my-10 mb-5">
 
                         <div className='relative'>

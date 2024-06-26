@@ -6,6 +6,7 @@ import { useState } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import CommonButton from "../../Components/CommonButton/CommonButton";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -15,8 +16,8 @@ const Login = () => {
       const { logIn } = UseAuth();
       const location = useLocation();
       const navigate = useNavigate();
-     
-      
+
+
       // using react hook form
       const { register, handleSubmit, formState: { errors } } = useForm()
       const onSubmit = (data) => {
@@ -49,6 +50,9 @@ const Login = () => {
 
       return (
             <div className="p-4 lg:p-0">
+                  <Helmet>
+                        <title>Login | ExploreAsia</title>
+                  </Helmet>
                   <div className="w-full mx-auto max-w-xl rounded-md sm:p-8  dark:text-gray-800">
                         <div className="border border-[#ABABAB] bg-[#ffffff33] rounded-md p-8">
                               <h2 className="mb-3 text-3xl font-bold font-josefin">Log In your Account!!</h2>

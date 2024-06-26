@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "../../Components/Banner/Banner";
 import Countries from "../../Components/Countries/Countries";
 import Slider from "../../Components/Slider/Slider";
@@ -8,6 +9,10 @@ import TouristSpotsSection from "../../Components/TouristSpotsSection/TouristSpo
 const Home = () => {
       return (
             <div>
+                  <Helmet>
+                        <title>Home | ExploreAsia</title>
+                  </Helmet>
+                  
                   <Banner />
                   <Slider />
                   <TouristSpotsSection />

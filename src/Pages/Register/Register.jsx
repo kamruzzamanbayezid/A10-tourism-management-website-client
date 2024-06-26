@@ -6,6 +6,7 @@ import { useState } from "react";
 import CommonButton from "../../Components/CommonButton/CommonButton";
 import UseAuth from "../../Hooks/UseAuth";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet-async";
 // import SocialLogin from ../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
@@ -53,6 +54,9 @@ const Register = () => {
 
       return (
             <div className="p-4 lg:p-0">
+                  <Helmet>
+                        <title>Register | ExploreAsia</title>
+                  </Helmet>
                   <div className="w-full mx-auto max-w-xl rounded-md sm:p-8  dark:text-gray-800">
                         <div className="border border-[#ABABAB] bg-[#ffffff33] rounded-md p-8">
                               <h2 className="mb-3 text-3xl font-bold font-josefin">Create an Account!!</h2>

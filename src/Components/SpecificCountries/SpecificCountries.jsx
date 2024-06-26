@@ -1,6 +1,7 @@
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import SpecificCountry from "./SpecificCountry";
+import { Helmet } from "react-helmet-async";
 
 const SpecificCountries = () => {
 
@@ -10,6 +11,9 @@ const SpecificCountries = () => {
 
       return (
             <div>
+                  <Helmet>
+                        <title>{countryName} | ExploreAsia</title>
+                  </Helmet>
                   <div className="lg:my-10 mb-10">
                         <div className='relative'>
                               <div className='absolute inset-0' style={{

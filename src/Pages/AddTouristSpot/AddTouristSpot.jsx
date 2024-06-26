@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
+import { Helmet } from "react-helmet-async";
 
 const AddTouristSpot = () => {
 
@@ -72,6 +73,9 @@ const AddTouristSpot = () => {
 
       return (
             <div className="max-w-7xl mx-auto my-8 md:my-14">
+                  <Helmet>
+                        <title>Add Tourist Spots | ExploreAsia</title>
+                  </Helmet>
                   <div className="max-w-7xl mx-auto flex items-center flex-col gap-4 justify-center text-center">
                         <h1 className="text-blue font-bold text-5xl font-josefin  relative z-20">Add Tourist Spot!</h1>
                         <span className="-mt-8 md:-mt-8 mb-4 h-3 w-[400px] common-bg relative z-0"></span>

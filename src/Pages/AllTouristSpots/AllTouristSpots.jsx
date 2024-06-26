@@ -2,6 +2,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import SingleTouristSpot from "./SingleTouristSpot";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AllTouristSpots = () => {
 
@@ -16,6 +17,9 @@ const AllTouristSpots = () => {
 
       return (
             <div>
+                  <Helmet>
+                        <title>All Tourist Spots | ExploreAsia</title>
+                  </Helmet>
                   <div className="lg:my-10 mb-10">
                         <div className='relative'>
                               <div className='absolute inset-0' style={{

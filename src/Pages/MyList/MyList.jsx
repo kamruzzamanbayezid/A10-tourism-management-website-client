@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import MyListTableRow from "./MyListTableRow/MyListTableRow";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyList = () => {
 
@@ -54,7 +55,9 @@ const MyList = () => {
 
       return (
             <div className="mb-20">
-
+                  <Helmet>
+                        <title>My Spots List | ExploreAsia</title>
+                  </Helmet>
                   <div className="lg:my-10 mb-10">
                         <div className='relative'>
                               <div className='absolute inset-0' style={{

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
@@ -49,6 +50,9 @@ const UpdateTouristSpot = () => {
 
       return (
             <div className="max-w-7xl mx-auto my-8 md:my-14">
+                  <Helmet>
+                        <title>Update Spot | ExploreAsia</title>
+                  </Helmet>
                   <div className="max-w-7xl mx-auto flex items-center flex-col gap-4 justify-center text-center">
                         <h1 className="text-blue font-bold text-5xl font-josefin  relative z-20">Update Tourist Spot!</h1>
                         <span className="-mt-8 md:-mt-8 mb-4 h-3 w-[470px] common-bg relative z-0"></span>
