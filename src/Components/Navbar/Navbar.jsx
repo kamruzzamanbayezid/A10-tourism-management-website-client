@@ -3,6 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import UseAuth from "../../Hooks/UseAuth";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
 
@@ -108,11 +109,13 @@ const Navbar = () => {
                                     }
 
                                     {
-                                          user && <div className=" tooltip tooltip-bottom dropdown-end" data-tip={user?.displayName}>
+                                          user && <div data-tooltip-id="my-tooltip"
+                                                data-tooltip-content={user?.displayName}
+                                                data-tooltip-place="top">
 
-                                                <div>
-                                                      <img src={user.photoURL} className="rounded-full w-12 h-12" />
-                                                </div>
+                                                <img src={user.photoURL} className="rounded-full w-12 h-12" />
+
+                                                <Tooltip id="my-tooltip" />
                                           </div>
                                     }
 

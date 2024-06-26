@@ -49,7 +49,7 @@ const Slider = () => {
                                     }}></div>
                                     <div className='absolute inset-0 z-0'></div>
                                     <div className='slider-text relative z-10  flex flex-col  justify-center items-center md:items-start md:pl-20 h-[80vh] md:h-[100vh] w-[100vw]'>
-                                          <h1 className='text-white font-medium font-josefin text-2xl md:text-4xl lg:text-7xl mb-4 lg:anima md:w-[60%] te__animated animate__lightSpeedInRight lg:w-[50%] text-center md:text-start'>It is Better to Travel Well Than to Arrive</h1>
+                                          <h1 className='text-white font-medium font-josefin text-2xl md:text-4xl lg:text-6xl mb-4 lg:anima md:w-[60%] te__animated animate__lightSpeedInRight lg:w-[50%] text-center md:text-start'>It is Better to Travel Well Than to Arrive</h1>
                                           <button className="px-7 md:px-10 py-4 md:py-5 relative rounded group overflow-hidden font-medium  inline-block bg-[#00095E] text-white">
                                                 <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 common-bg group-hover:h-full opacity-90"></span>
                                                 <span className="relative group-hover:text-white">Explores Now</span>
@@ -69,7 +69,7 @@ const Slider = () => {
                                     }}></div>
                                     <div className='absolute inset-0 z-0'></div>
                                     <div className='slider-text relative z-10  flex flex-col  justify-center items-center md:items-start md:pl-20 h-[80vh] md:h-[100vh] w-[100vw]'>
-                                          <h1 className='text-white font-medium text-2xl md:text-4xl lg:text-7xl mb-4 lg:w-[50%] md:w-[60%] text-center md:text-start font-josefin'>It is Better to Travel Well Than to Arrive</h1>
+                                          <h1 className='text-white font-medium text-2xl md:text-4xl lg:text-6xl mb-4 lg:w-[50%] md:w-[60%] text-center md:text-start font-josefin'>It is Better to Travel Well Than to Arrive</h1>
 
 
                                           <button className="px-7 md:px-10 py-4 md:py-5 relative rounded group overflow-hidden font-medium  inline-block bg-[#00095E] text-white">
@@ -91,7 +91,7 @@ const Slider = () => {
                                     }}></div>
                                     <div className='absolute inset-0 z-0'></div>
                                     <div className='slider-text relative z-10  flex flex-col  justify-center items-center md:items-start md:pl-20 h-[80vh] md:h-[100vh] w-[100vw]'>
-                                          <h1 className='text-white font-medium font-josefin text-2xl md:text-4xl lg:text-7xl mb-4 lg:w-[50%] md:w-[60%] text-center md:text-start'>It is Better to Travel Well Than to Arrive</h1>
+                                          <h1 className='text-white font-medium font-josefin text-2xl md:text-4xl lg:text-6xl mb-4 lg:w-[50%] md:w-[60%] text-center md:text-start'>It is Better to Travel Well Than to Arrive</h1>
 
                                           <button className="px-7 md:px-10 py-4 md:py-5 relative rounded group overflow-hidden font-medium  inline-block bg-[#00095E] text-white">
                                                 <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 common-bg group-hover:h-full opacity-90"></span>
