@@ -78,7 +78,7 @@ const AddTouristSpot = () => {
 
                   </div>
 
-                  <form onSubmit={handleAddTouristSpot} className="lg:w-4/5 p-4 mx-auto">
+                  <form onSubmit={handleAddTouristSpot} className="lg:w-4/5 p-4 lg:p-0 mx-auto">
                         <div className="grid gap-6 mb-6 md:grid-cols-2">
                               <div>
                                     <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tourists Spot Name</label>

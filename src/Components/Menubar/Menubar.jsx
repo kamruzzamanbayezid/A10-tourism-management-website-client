@@ -88,6 +88,10 @@ const Menubar = () => {
                                           <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/login' ><li className="py-3 px-8 text-sm h-full">Login</li></NavLink>
                               }
 
+                              {
+                                    !user?.email && <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/register' ><li className="py-3 px-8 text-sm h-full">Register</li></NavLink>
+                              }
+
                         </ul>
                   </div>
             </div>

@@ -36,7 +36,7 @@ const SpecificCountries = () => {
                                     <img className="h-full" src="https://i.ibb.co/3FVgSYq/3009287.jpg" alt="" />
                               </div>
                               :
-                              <div className="max-w-[1170px] mx-auto">
+                              <div className="max-w-[1170px] mx-auto  p-4 lg:p-0">
 
                                     <div className=''>
                                           {

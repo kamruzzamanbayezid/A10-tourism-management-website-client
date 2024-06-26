@@ -46,7 +46,7 @@ const AllTouristSpots = () => {
                               </div>
 
                               :
-                              <div className="max-w-[1170px] mx-auto">
+                              <div className="max-w-[1170px] mx-auto p-4 lg:p-0">
 
                                     {/* dropdown */}
                                     <div className="lg:max-w-5xl mx-auto mb-8 flex justify-center">

@@ -38,7 +38,7 @@ const TouristSpotDetails = () => {
                         </div>
                   </div>
 
-                  <div className="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto lg:mt-20">
+                  <div className="p-4 lg:p-0 flex flex-col lg:flex-row justify-between max-w-7xl mx-auto lg:mt-20">
 
                         <div className=" lg:w-[59%]">
                               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 my-5">

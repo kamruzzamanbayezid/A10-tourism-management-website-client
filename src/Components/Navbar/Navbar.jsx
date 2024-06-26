@@ -38,7 +38,7 @@ const Navbar = () => {
       }
 
       return (
-            <div className="lg:my-4">
+            <div className="lg:my-4 px-4 lg:px-0 pt-4 lg:pt-0">
                   <div>
                         <div className="flex justify-between items-center max-w-7xl mx-auto">
                               <div className="flex items-center">

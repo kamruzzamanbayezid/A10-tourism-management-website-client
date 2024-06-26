@@ -97,11 +97,11 @@ const MyList = () => {
                                                 </colgroup>
                                                 <thead className="dark:bg-gray-300">
                                                       <tr className="text-left">
-                                                            <th className="text-blue text-xl p-3">Spot Name</th>
-                                                            <th className="text-blue text-xl p-3">Travel Time</th>
-                                                            <th className="text-blue text-xl p-3">Average Cost</th>
-                                                            <th className="text-blue text-xl p-3">Season</th>
-                                                            <th className="text-blue text-xl p-3">Status</th>
+                                                            <th className="text-blue text-base lg:text-xl p-3">Spot Name</th>
+                                                            <th className="text-blue text-base lg:text-xl p-3">Travel Time</th>
+                                                            <th className="text-blue text-base lg:text-xl p-3">Average Cost</th>
+                                                            <th className="text-blue text-base lg:text-xl p-3">Season</th>
+                                                            <th className="text-blue text-base lg:text-xl p-3">Status</th>
                                                       </tr>
                                                 </thead>
                                                 <tbody>
