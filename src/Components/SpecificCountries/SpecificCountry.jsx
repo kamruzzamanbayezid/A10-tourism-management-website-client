@@ -54,6 +54,7 @@ const SpecificCountry = ({ specificCountry }) => {
 
 SpecificCountry.propTypes = {
       specificCountry: PropTypes.object,
+      setCountry: PropTypes.func
 };
 
 export default SpecificCountry;

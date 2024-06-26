@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import TouristSpot from "../TouristSpot/TouristSpot";
+import { Link } from "react-router-dom";
 
 const TouristSpotsSection = () => {
 
@@ -19,12 +20,19 @@ const TouristSpotsSection = () => {
 
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                               {
-                                    touristSpots?.map((touristSpot, idx) => <TouristSpot key={idx} touristSpot={touristSpot}></TouristSpot>)
+                                    touristSpots?.slice(0, 6).map((touristSpot, idx) => <TouristSpot key={idx} touristSpot={touristSpot}></TouristSpot>)
                               }
                         </div>
+
+                        <Link to='/allTouristSpots' className={`${touristSpots?.length > 6 ? 'flex' : 'hidden'}  items-center justify-center`}>
+                              <button className="px-7 md:px-10 py-4 md:py-5 relative rounded group overflow-hidden font-medium  inline-block bg-[#00095E] text-white">
+                                    <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 common-bg group-hover:h-full opacity-90"></span>
+                                    <span className="relative group-hover:text-white">View All Tourist Spots</span>
+                              </button>
+                        </Link>
                   </div>
 
-            </div>
+            </div >
       );
 };
 

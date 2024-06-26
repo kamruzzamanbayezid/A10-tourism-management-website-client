@@ -108,15 +108,11 @@ const Navbar = () => {
                                     }
 
                                     {
-                                          user && <div className="dropdown dropdown-end">
+                                          user && <div className=" tooltip tooltip-bottom dropdown-end" data-tip={user?.displayName}>
 
-                                                <div tabIndex={0} className="">
+                                                <div>
                                                       <img src={user.photoURL} className="rounded-full w-12 h-12" />
                                                 </div>
-                                                <ul tabIndex={0} className="dropdown-content z-[1] p-3 shadow bg-base-100 rounded-box w-fit ">
-                                                      <li><a className="text-blue mb-2">{user.displayName}</a></li>
-                                                      <li><a className="text-blue">{user.email}</a></li>
-                                                </ul>
                                           </div>
                                     }
 

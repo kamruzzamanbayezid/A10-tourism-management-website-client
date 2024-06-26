@@ -1,10 +1,12 @@
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import SpecificCountry from "./SpecificCountry";
 
 const SpecificCountries = () => {
 
       const loadedSpecificCountry = useLoaderData();
+
+      const { countryName } = useParams()
 
       return (
             <div>
@@ -20,9 +22,9 @@ const SpecificCountries = () => {
                               }}></div>
                               <div className='absolute inset-0 z-0'></div>
                               <div className='location relative z-10 home-slider-place flex flex-col justify-center items-center h-[70vh] md:h-[60vh]  mx-auto'>
-                                    <h1 className='text-white text-center font-medium lg:text-6xl mb-4 animate__animated animate__zoomIn font-josefin'>Live Your Life Through Travel</h1>
+                                    <h1 className='text-white text-center font-medium lg:text-6xl mb-4 animate__animated animate__zoomIn font-josefin'>Explore Beauty Of <span className="text-yellow">{countryName || 'World'}</span></h1>
                                     <span className='text-lg text-white flex items-center gap-2 mb-4'>
-                                          <Link to='/'>Home</Link> <MdKeyboardDoubleArrowRight className="text-yellow text-2xl" /> Explore Beauty Of World
+                                          <Link to='/'>Home</Link> <MdKeyboardDoubleArrowRight className="text-yellow text-2xl" /> Explore Beauty Of {countryName || 'World'}
 
                                     </span>
 
@@ -43,6 +45,7 @@ const SpecificCountries = () => {
                                                 loadedSpecificCountry?.map((specificCountry, idx) => <SpecificCountry
                                                       key={idx}
                                                       specificCountry={specificCountry}
+                                                      countryName={countryName}
                                                 ></SpecificCountry>)
                                           }
                                     </div>
