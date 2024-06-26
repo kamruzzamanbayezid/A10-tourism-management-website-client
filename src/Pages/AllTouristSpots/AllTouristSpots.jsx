@@ -10,7 +10,7 @@ const AllTouristSpots = () => {
       const [allTouristSpots, setAllTouristSpots] = useState(loadedAllTouristSpots);
 
       const handleSort = () => {
-            fetch('http://localhost:5000/touristSpots/descending')
+            fetch('https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpots/descending')
                   .then(res => res.json())
                   .then(data => setAllTouristSpots(data))
       }

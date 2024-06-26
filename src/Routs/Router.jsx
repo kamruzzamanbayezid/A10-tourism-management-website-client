@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                   },
                   {
                         path: '/allTouristSpots',
-                        loader: () => fetch('http://localhost:5000/touristSpots'),
+                        loader: () => fetch('https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpots'),
                         element: <AllTouristSpots />
                   },
                   {
@@ -38,17 +38,17 @@ const router = createBrowserRouter([
                   },
                   {
                         path: '/touristSpotDetails/:id',
-                        loader: ({ params }) => fetch(`http://localhost:5000/touristSpotDetails/${params.id}`),
+                        loader: ({ params }) => fetch(`https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpotDetails/${params.id}`),
                         element: <PrivateRoute><TouristSpotDetails /></PrivateRoute>
                   },
                   {
                         path: '/specificCountry/:countryName',
-                        loader: ({ params }) => fetch(`http://localhost:5000/touristSpots/specificCountry/${params.countryName}`),
+                        loader: ({ params }) => fetch(`https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpots/specificCountry/${params.countryName}`),
                         element: <SpecificCountries />
                   },
                   {
                         path: '/updateTouristSpot/:id',
-                        loader: ({ params }) => fetch(`http://localhost:5000/touristSpotDetails/${params.id}`),
+                        loader: ({ params }) => fetch(`https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpotDetails/${params.id}`),
                         element: <PrivateRoute><UpdateTouristSpot /></PrivateRoute>
                   },
                   {

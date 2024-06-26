@@ -34,7 +34,7 @@ const UpdateTouristSpot = () => {
                   description,
             };
 
-            fetch(`http://localhost:5000/touristSpotDetails/${loadedTouristSpot?._id}`, {
+            fetch(`https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpotDetails/${loadedTouristSpot?._id}`, {
                   method: 'PUT',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(formData)

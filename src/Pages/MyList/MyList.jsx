@@ -14,7 +14,7 @@ const MyList = () => {
       const [touristSpots, setTouristSpots] = useState([]);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/touristSpots/${email}`)
+            fetch(`https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpots/${email}`)
                   .then(res => res.json())
                   .then(data => setTouristSpots(data))
       }, [email]);
@@ -31,7 +31,7 @@ const MyList = () => {
                   confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                   if (result.isConfirmed) {
-                        fetch(`http://localhost:5000/touristSpots/${id}`, {
+                        fetch(`https://a10-tourism-management-website-server-fs2fhzgui.vercel.app/touristSpots/${id}`, {
                               method: 'DELETE'
                         })
                               .then(res => res.json())
