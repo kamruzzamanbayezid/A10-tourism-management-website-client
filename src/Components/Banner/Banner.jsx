@@ -1,7 +1,7 @@
 
 const Banner = () => {
       return (
-            <div className="max-w-7xl mx-auto lg:h-[70vh] flex items-center flex-col gap-4 justify-center w-full md:w-[750px] text-center">
+            <div className="max-w-7xl mx-auto lg:h-[500px] flex items-center flex-col gap-4 justify-center w-full md:w-[750px] text-center">
                   <h1 className="text-blue font-bold text-3xl md:text-6xl font-josefin lg:leading-[70px] relative z-20">Lifelong memories just a few seconds away</h1>
                   <span className="-mt-8 md:-mt-12 mb-4 h-2 md:h-3 w-[250px] md:w-[500px] common-bg relative z-0"></span>
                   <p className="text-blue md:text-xl mb-5">Lets start your journey with us, your dream will come true.</p>

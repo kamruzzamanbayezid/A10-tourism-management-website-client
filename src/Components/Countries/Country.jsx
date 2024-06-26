@@ -17,7 +17,7 @@ const Country = ({ country }) => {
                               />
                         </figure>
                         <div className="p-4">
-                              <h2 className="card-title text-blue text-2xl font-bold mb-2">{country_name}</h2>
+                              <h2 className="card-title font-josefin text-blue text-2xl font-bold mb-2">{country_name}</h2>
                               <p className='text-[#666] text-sm'>{description}</p>
                         </div>
                   </div>
